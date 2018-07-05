@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <!-- Refreshes page every 60 sec. -->
+    <meta http-equiv="refresh" content="60" />
+    <title>Subway Station Schedule</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+
+    <!-- Moment.js Reference -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+
+</head>
+
+<body>
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Jumbotron -->
+        <div class="jumbotron" style="color: white">
+            <h1 class="lead text-center">59th St - Columbus Circle</h1>
+            <h2 class="text-center">Central Park North - NYC Subway Station</h2>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <!-- Current Subway Schedule-->
+                <div class="panel">
+                    <div class="panel-heading" style="background-color: rgb(122, 122, 122)">
+                        <h3 class="panel-title" style="color: white">
+                            <strong>Current Subway Schedule</strong> - Auto-Refresh Every Minute
+                        </h3>
+                    </div>
+                    <!-- <div class="panel-body"> -->
+                    <div class="panel-body">
+                        <table class="table table-hover" id='train-table'>
+                            <thead>
+                                <tr>
+                                    <th>Line Name</th>
+                                    <th>Terminal</th>
+                                    <th>Frequency (min)</th>
+                                    <th>Next Arrival</th>
+                                    <th>Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <!-- Add Subway Line -->
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color:  rgb(122, 122, 122)">
+                        <h3 class="panel-title" style="color: white">
+                            <strong>Add Subway Line</strong>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <!-- Entry Form -->
+                        <form>
+                            <div class="form-group">
+                                <label for="train-name-input">Line Name</label>
+                                <input class="form-control" id="train-name-input" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="destination-input">Destination</label>
+                                <input class="form-control" id="destination-input" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="train-time-input">First Train Time (HH:mm - military time)</label>
+                                <input class="form-control" id="train-time-input" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="frequency-input">Frequency (min)</label>
+                                <input class="form-control" id="frequency-input" type="text">
+                            </div>
+
+                            <!-- Buttons -->
+                            <button class="btn btn-success" id="add-train-btn" type="submit">Submit</button>
+                            <button class="btn btn-danger" id="delete" type="submit">Delete</button>
+
+                            <!-- <button type="submit" id="clear">Clear All</button> -->
+                            <p class="direction">* Delete button only requires a matching '
+                                <span>Line Name</span>' input</p>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<!-- JavaScript -->
+<script src="assets/app2.js"></script>
+
+</html>

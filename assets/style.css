@@ -1,0 +1,15 @@
+body {
+    background: url("../assets/images/Wintertime-In-Central-Park.jpg") repeat;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: auto;
+}
+
+.jumbotron {
+    text-align: center;
+    opacity: .7;
+    background-color: black;
+}
+
+.panel {
+    border-color: black;
+}
